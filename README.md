@@ -27,13 +27,13 @@ jcmd $(pidof java) help VM.logだと使いやすい
 maven clean install で意図したJarが入っているかなど
 
 ## その他おまけ
-Async Profiler ... どのメソッドがボトルネックかをGUI(html形式)で表示  
-maven ... `maven clean install`などのコマンドでJavaアプリケーションを作成するのに便利、依存するライブラリを自動でインストールしてくれる ~/.m2mavenにそのライブラリは保存
+Async Profiler ... どのメソッドがボトルネックかをGUI(html形式)で表示    
+maven ... `maven clean install`などのコマンドでJavaアプリケーションを作成するのに便利、依存するライブラリを自動でインストールしてくれる ~/.m2mavenにそのライブラリは保存されている    
 shade jar ... ライブラリなどに入っているクラスの全てjar以下のディレクトリに置いたいわば解凍されたJar、LambdaなどのFaaSだとこの形態じゃないと
-classを認識してくれない
-thin jar ... mavenでライブラリ(jdbcなど)が全て入ったJar、これを持っていけばどこでも動く
-逆によく見るoriginal Jarはその外部ライブラリが入っていない素のJar
-jarコマンド ... jarの作成、展開、中身などを確認できるコマンド
+classを認識してくれない  
+thin jar ... mavenでライブラリ(jdbcなど)が全て入ったJar、これを持っていけばどこでも動く。
+逆によく見るoriginal Jarはその外部ライブラリが入っていない素のJar  
+jarコマンド ... jarの作成、展開、中身などを確認できるコマンド  
 
 ## Javaでなぜつくるのかより
 - JavaはCと違いポインタではなくポインタへの参照を使っているのでメモリに直接アクセスできない
