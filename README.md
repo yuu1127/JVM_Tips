@@ -12,12 +12,16 @@
 `-XX:+PrintGCDetails` ... GCの詳細情報表示
 
 ## -Xlog options
-`-Xlog:os=info` ... 基本、ULログでos,gcなどの見たいログ情報レベル別で狙い撃ち  
+`-Xlog:os=info` ... 基本、ULログでos,gcなどの見たいログ情報レベル別で狙い撃ち。trace,debug,info,warning,error
+`-Xlog:gc+heap` ... でもgc+heapの情報を出力
 `-Xlog:jit+compilation=debug` ... ULログでJITコンパイルの最適化レベル(tier1~4を見る)
+`-Xlog:gc:file=gc.log` ...  fileにgcの内容を出力。左から順にJVM起動からの経過時間、ログレベル、タグ、メッセージ
+
 
 ## その他Java関連コマンド
-`jcmd <PID> help VM.log` ... Javaアプリケーションの設定を調べる
+`jcmd <PID> help VM.log` ... Javaプロセスの設定を調べる
 jcmd $(pidof java) help VM.logだと使いやすい
+`jcmd <PID> VM.log output="sample.log"` ... ファイルに出力
 `-Xms` ... ヒープ・メモリ全体の起動時のサイズ  
 `-Xmx` ... ヒープ・メモリ全体の最大サイズ(New + Old)  
 `-Xmn` ... NEW領域のサイズ  
